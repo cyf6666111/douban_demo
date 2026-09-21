@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% from "_macros.html" import card, chart, score_bar %}
+
+{% block title %}电影榜单 TOP10 · 豆瓣电影数据可视化{% endblock %}
+{% block eyebrow %}数据图表 / 评分榜单{% endblock %}
+{% block heading %}豆瓣评分 TOP10{% endblock %}
+{% block description %}
+    按豆瓣评分降序取前十名，评分相同时按评价人数排序（人数越多说明分数越"稳"）。
+    榜单类数据用横向条形图呈现：所有条形共用同一条基准线，长度可直接横向比较，
+    长片名也不会像竖排柱状图那样被逼迫旋转或压扁。
+{% endblock %}
+
+{% block note %}
+    <p class="page-note">
+        <b>这里修掉了一个原始 bug：</b>原实现在漏斗图里使用自增主键 <code>id</code> 作为数值，
+        等于"用这条记录在数据库里的行号决定漏斗宽度"，没有任何业务含义；
+        而且取数 SQL 没有 <code>ORDER BY</code>，取到的是 10 条任意记录。
+        现在改为按评分排序 + 条形图。漏斗图适合表现"流程逐级转化"
+        （曝光→点击→下单），拿来排榜单会误导读者。
+    </p>
+{% endblock %}
+
+{% block content %}
+{% call card("评分排行", "取前 10 名 · 评分相同按评价人数排序", delay=2) %}
+    {{ chart(url_for('api_movie_top'), 'chart-lg') }}
+{% endcall %}
+
+{% call card("榜单明细", "含年份、类型与评价人数", delay=3, flush=True) %}
+    <div class="table-wrap">
+        <table class="data">
+            <thead>
+            <tr>
+                <th class="n" style="width:52px">#</th>
+                <th>片名</th>
+                <th style="width:74px">年份</th>
+                <th style="width:190px">类型</th>
+                <th class="n" style="width:150px">豆瓣评分</th>
+                <th class="n" style="width:110px">评价人数</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% set ratings = table | map(attribute='rating') | list %}
+            {% for movie in table %}
+                <tr>
+                    <td class="n"><span class="rank{% if loop.index <= 3 %} top{% endif %}">{{ loop.index }}</span></td>
+                    <td class="title-cell">
+                        {% set parts = movie.movie_name.split(' ', 1) %}
+                        <span class="zh">{{ parts[0] }}</span>
+                        {% if parts | length > 1 %}<span class="en">{{ parts[1] }}</span>{% endif %}
+                    </td>
+                    <td class="num">{{ movie.release_year }}</td>
+                    <td>
+                        {% for genre in (movie.movie_type or '').split(',') if genre.strip() %}
+                            <span class="tag">{{ genre.strip() }}</span>
+                        {% endfor %}
+                    </td>
+                    <td class="n">{{ score_bar(movie.rating, ratings | min, ratings | max) }}</td>
+                    <td class="n">{{ '%.1f' % (movie.rater_count / 10000) }} 万</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endcall %}
+{% endblock %}

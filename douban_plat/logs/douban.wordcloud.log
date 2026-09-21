@@ -1,0 +1,66 @@
+2026-09-17 22:58:53 | INFO    | douban.wordcloud | 开始生成词云（数据量 250）
+2026-09-17 22:58:55 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（380 个词）
+2026-09-17 22:58:57 | INFO    | douban.wordcloud | 词云生成成功：director_names.png（171 个词）
+2026-09-17 22:58:57 | INFO    | douban.wordcloud | 词云生成成功：types.png（27 个词）
+2026-09-17 22:59:02 | INFO    | douban.wordcloud | 开始生成词云（数据量 250）
+2026-09-17 22:59:04 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（380 个词）
+2026-09-17 22:59:05 | INFO    | douban.wordcloud | 词云生成成功：director_names.png（171 个词）
+2026-09-17 22:59:06 | INFO    | douban.wordcloud | 词云生成成功：types.png（27 个词）
+2026-09-17 23:03:46 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:03:46 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:03:46 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:03:46 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:04:08 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:04:08 | ERROR   | douban.wordcloud | 词云生成失败 movie_names.png：[Errno 13] Permission denied: 'C:\\Users\\MR\\AppData\\Local\\Temp\\dsh-yr0X8m\\tmpr4nd3t6f\\movie_names.png'
+2026-09-17 23:04:08 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:04:08 | ERROR   | douban.wordcloud | 词云生成失败 types.png：[Errno 13] Permission denied: 'C:\\Users\\MR\\AppData\\Local\\Temp\\dsh-yr0X8m\\tmpr4nd3t6f\\types.png'
+2026-09-17 23:04:08 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:04:08 | ERROR   | douban.wordcloud | 词云生成失败 movie_names.png：[Errno 13] Permission denied: 'C:\\Users\\MR\\AppData\\Local\\Temp\\dsh-yr0X8m\\tmpsyxnjqkx\\movie_names.png'
+2026-09-17 23:04:08 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:04:08 | ERROR   | douban.wordcloud | 词云生成失败 types.png：[Errno 13] Permission denied: 'C:\\Users\\MR\\AppData\\Local\\Temp\\dsh-yr0X8m\\tmpsyxnjqkx\\types.png'
+2026-09-17 23:04:20 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:04:20 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:04:20 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:04:20 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:04:25 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:04:25 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:04:25 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:04:25 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:04:25 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:04:25 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:04:25 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:04:25 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:04:30 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:04:30 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:04:30 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:04:30 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:04:30 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:04:30 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:04:30 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:04:30 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:04:36 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:04:36 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:04:36 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:04:37 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:04:37 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:04:37 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:04:37 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:04:37 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:04:46 | INFO    | douban.wordcloud | 开始生成词云（数据量 250）
+2026-09-17 23:04:47 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（375 个词）
+2026-09-17 23:04:48 | INFO    | douban.wordcloud | 词云生成成功：director_names.png（171 个词）
+2026-09-17 23:04:49 | INFO    | douban.wordcloud | 词云生成成功：types.png（27 个词）
+2026-09-17 23:05:25 | INFO    | douban.wordcloud | 词云为最新，跳过生成
+2026-09-17 23:05:26 | INFO    | douban.wordcloud | 词云为最新，跳过生成
+2026-09-17 23:05:37 | INFO    | douban.wordcloud | 词云为最新，跳过生成
+2026-09-17 23:05:37 | INFO    | douban.wordcloud | 词云为最新，跳过生成
+2026-09-17 23:07:28 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:07:28 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:07:28 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:07:29 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:07:29 | INFO    | douban.wordcloud | 开始生成词云（数据量 3）
+2026-09-17 23:07:29 | INFO    | douban.wordcloud | 词云生成成功：movie_names.png（4 个词）
+2026-09-17 23:07:29 | WARNING | douban.wordcloud | 有效词汇不足（2 个），跳过生成 director_names.png
+2026-09-17 23:07:29 | INFO    | douban.wordcloud | 词云生成成功：types.png（3 个词）
+2026-09-17 23:07:33 | INFO    | douban.wordcloud | 词云为最新，跳过生成
+2026-09-17 23:13:08 | INFO    | douban.wordcloud | 词云为最新，跳过生成

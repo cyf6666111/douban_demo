@@ -1,0 +1,68 @@
+{# ==========================================================================
+   公共宏：卡片、图表容器、评分条、分页器
+   原项目 6 个图表模板各自复制了一遍"card + ajax + setOption"，
+   改一个样式要改 6 个文件。这里抽成宏，样式与结构只有一处定义。
+   ========================================================================== #}
+
+{# 卡片：{% call card("标题", "右侧提示") %} ... {% endcall %} #}
+{% macro card(title, hint=None, delay=2, flush=False) %}
+<section class="card rise rise-{{ delay }}">
+    <div class="card-head">
+        <h2 class="card-title">{{ title }}</h2>
+        {% if hint %}<span class="card-hint">{{ hint }}</span>{% endif %}
+    </div>
+    <div class="card-body{% if flush %} is-flush{% endif %}">{{ caller() }}</div>
+</section>
+{% endmacro %}
+
+{# 图表容器：.chart 必须是空元素，载入/错误提示由 dashboard.js 填到兄弟节点 .chart-state #}
+{% macro chart(url, size='chart-lg', params=None) %}
+<div class="chart-frame">
+    <div class="chart {{ size }}"
+         data-chart-url="{{ url }}"{% if params %} data-chart-params='{{ params | tojson }}'{% endif %}></div>
+    <div class="chart-state" hidden></div>
+</div>
+{% endmacro %}
+
+{# 评分条：把 8.4~9.7 的窄区间映射到 0~100%，否则所有条形看起来一样长 #}
+{% macro score_bar(value, lo=8.4, hi=9.7) %}
+{%- set span = (hi - lo) if (hi - lo) > 0 else 1 -%}
+{%- set pct = ((value - lo) / span * 100) -%}
+{%- set pct = 100 if pct > 100 else (4 if pct < 4 else pct) -%}
+<span class="score-bar">
+    <span class="track"><i class="fill" style="width: {{ '%.0f' % pct }}%"></i></span>
+    <span class="num">{{ '%.1f' % value }}</span>
+</span>
+{% endmacro %}
+
+{# 分页器：保留检索关键字，纯链接实现（不依赖 JS，可被搜索引擎/爬虫跟随） #}
+{% macro pager(page, total_pages, keyword='') %}
+<nav class="pager" aria-label="分页导航">
+    <span>第 <b class="num">{{ page }}</b> / {{ total_pages }} 页</span>
+    <span class="pages">
+        {% if page > 1 %}
+            <a class="pg" href="{{ url_for('movie_list', page=page - 1, q=keyword) }}" rel="prev">上一页</a>
+        {% else %}
+            <span class="pg" aria-disabled="true" style="opacity:.38">上一页</span>
+        {% endif %}
+
+        {% for p in range(1, total_pages + 1) %}
+            {% if p == 1 or p == total_pages or (p >= page - 2 and p <= page + 2) %}
+                {% if p == page %}
+                    <span class="pg is-current" aria-current="page">{{ p }}</span>
+                {% else %}
+                    <a class="pg" href="{{ url_for('movie_list', page=p, q=keyword) }}">{{ p }}</a>
+                {% endif %}
+            {% elif p == page - 3 or p == page + 3 %}
+                <span class="gap">…</span>
+            {% endif %}
+        {% endfor %}
+
+        {% if page < total_pages %}
+            <a class="pg" href="{{ url_for('movie_list', page=page + 1, q=keyword) }}" rel="next">下一页</a>
+        {% else %}
+            <span class="pg" aria-disabled="true" style="opacity:.38">下一页</span>
+        {% endif %}
+    </span>
+</nav>
+{% endmacro %}

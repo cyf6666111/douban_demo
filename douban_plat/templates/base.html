@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}豆瓣电影数据可视化{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.svg') }}" type="image/svg+xml">
+    {# 静态资源全部本地化：原项目从 CDN 引入 Bootstrap 与 ECharts，
+       答辩教室/断网环境下页面会直接散架。本地 echarts.min.js 已存在，直接复用。 #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="{{ url_for('static', filename='js/echarts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</head>
+<body class="page">
+<div class="page-inner">
+
+    <header class="page-head rise rise-1">
+        <div class="page-eyebrow"><span>{% block eyebrow %}数据可视化{% endblock %}</span></div>
+        <h1 class="page-title">{% block heading %}页面标题{% endblock %}</h1>
+        <p class="page-desc">{% block description %}{% endblock %}</p>
+        {% block note %}{% endblock %}
+    </header>
+
+    {% block content %}{% endblock %}
+
+</div>
+{% block scripts %}{% endblock %}
+</body>
+</html>

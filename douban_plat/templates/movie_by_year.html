@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% from "_macros.html" import card, chart %}
+
+{% block title %}各年份上映数量 · 豆瓣电影数据可视化{% endblock %}
+{% block eyebrow %}数据图表 / 年度分布{% endblock %}
+{% block heading %}各年份上映电影数量{% endblock %}
+{% block description %}
+    横轴是上映年份（1931—2023，共 {{ table | length }} 个有数据的年份），
+    纵轴是该年上映且进入 Top250 的电影数。柱状图带缩放滑块，
+    可拖动查看任意年份区间。
+{% endblock %}
+
+{% block note %}
+    <p class="page-note">
+        <b>口径说明：</b>统计范围仅限豆瓣 Top250 榜单内的电影，
+        因此纵轴是「<b>该年上榜电影数</b>」而不是「该年上映电影总数」。
+        {% if peak %}峰值出现在 <b>{{ peak.year }}</b> 年（{{ peak.cnt }} 部），
+        全部年份合计 {{ total }} 部。{% endif %}
+    </p>
+{% endblock %}
+
+{% block content %}
+<div class="split">
+    {% call card("年度分布柱状图", "支持滚轮缩放 / 拖拽滑块", delay=2) %}
+        {{ chart(url_for('api_movie_by_year'), 'chart-lg') }}
+    {% endcall %}
+
+    {% call card("年度数据明细", table | length ~ " 个年份", delay=3, flush=True) %}
+        <div class="table-wrap" style="max-height:560px">
+            <table class="data">
+                <thead>
+                <tr>
+                    <th style="width:88px">年份</th>
+                    <th class="n">上榜数</th>
+                    <th class="n">占全榜</th>
+                    <th style="width:110px">相对量</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in table %}
+                    <tr>
+                        <td class="num">{{ row.year }}</td>
+                        <td class="n">{{ row.cnt }}</td>
+                        <td class="n">{{ '%.1f' % (row.cnt / total * 100) }}%</td>
+                        <td>
+                            <span class="score-bar">
+                                <span class="track" style="width:80px">
+                                    <i class="fill" style="width: {{ '%.0f' % (row.cnt / peak.cnt * 100) }}%"></i>
+                                </span>
+                            </span>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endcall %}
+</div>
+{% endblock %}

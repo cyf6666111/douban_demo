@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% from "_macros.html" import card, chart, score_bar %}
+
+{% block title %}评价人数 TOP20 · 豆瓣电影数据可视化{% endblock %}
+{% block eyebrow %}数据图表 / 热度榜单{% endblock %}
+{% block heading %}评价人数 TOP20{% endblock %}
+{% block description %}
+    按豆瓣评价人数降序取前 20 名，数值统一换算为「万人」，
+    否则 3249655 这样的七位数会把坐标轴撑得过宽、也不便于快速阅读。
+{% endblock %}
+
+{% block note %}
+    <p class="page-note">
+        <b>字段类型踩坑记录：</b>建表时 <code>rater_count</code> 用的是 <code>varchar</code>，
+        <code>ORDER BY rater_count DESC</code> 会退化成<b>字符串比较</b>——
+        '999550' 会被判定为大于 '3249655'，于是榜首变成了《天空之城》，
+        而不是《肖申克的救赎》。现在用 <code>CAST(... AS UNSIGNED)</code> 按数值比较，
+        更彻底的做法是把字段类型改成 <code>INT UNSIGNED</code>（见 sql/migrate_v2.sql）。
+    </p>
+{% endblock %}
+
+{% block content %}
+{% call card("评价人数排行", "Top 20 · 单位：万人", delay=2) %}
+    {{ chart(url_for('api_movie_rater_count'), 'chart-xl') }}
+{% endcall %}
+
+{% call card("榜单明细", "含评分与上映年份", delay=3, flush=True) %}
+    <div class="table-wrap">
+        <table class="data">
+            <thead>
+            <tr>
+                <th class="n" style="width:52px">#</th>
+                <th>片名</th>
+                <th style="width:74px">年份</th>
+                <th class="n" style="width:130px">评价人数</th>
+                <th class="n" style="width:140px">豆瓣评分</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for movie in table %}
+                <tr>
+                    <td class="n"><span class="rank{% if loop.index <= 3 %} top{% endif %}">{{ loop.index }}</span></td>
+                    <td class="title-cell">
+                        {% set parts = movie.movie_name.split(' ', 1) %}
+                        <span class="zh">{{ parts[0] }}</span>
+                        {% if parts | length > 1 %}<span class="en">{{ parts[1] }}</span>{% endif %}
+                    </td>
+                    <td class="num">{{ movie.release_year }}</td>
+                    <td class="n">{{ '{:,}'.format(movie.rater_count) }}</td>
+                    <td class="n">{{ score_bar(movie.rating, 8.0, 10.0) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endcall %}
+{% endblock %}

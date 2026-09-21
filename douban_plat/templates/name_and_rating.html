@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% from "_macros.html" import card, chart, score_bar %}
+
+{% block title %}评分抽样与分布 · 豆瓣电影数据可视化{% endblock %}
+{% block eyebrow %}数据图表 / 评分分析{% endblock %}
+{% block heading %}评分抽样与整体分布{% endblock %}
+{% block description %}
+    上图从全表中随机抽取 {{ table | length }} 部电影展示评分水平，
+    并标出抽样均值；下图把全部电影的评分按 0.1 分一档分箱，
+    看整体分布集中在哪个区间。
+{% endblock %}
+
+{% block note %}
+    <p class="page-note">
+        <b>为什么要固定随机种子？</b>原实现用 <code>ORDER BY RAND()</code>，
+        每次刷新抽样结果都变，图表无法复现也没法对比。
+        现在用 <code>RAND(seed)</code> 固定种子（当前 seed = <b>{{ seed }}</b>），
+        同一 seed 结果稳定；点「换一组抽样」换 seed 即可重新抽取。
+    </p>
+{% endblock %}
+
+{% block content %}
+{% set ratings = table | map(attribute='rating') | list %}
+{% set r_lo = (ratings | min) if ratings else 8.0 %}
+{% set r_hi = (ratings | max) if ratings else 10.0 %}
+{% call card("评分抽样散点图", "当前抽样均值 " ~ avg ~ " 分", delay=2) %}
+    <div style="display:flex;justify-content:flex-end;margin-bottom:10px">
+        <a class="btn" href="{{ url_for('name_and_rating', seed=(seed + 1) % 9999) }}">换一组抽样 ⟳</a>
+    </div>
+    {{ chart(url_for('api_movie_rating'), 'chart-md', {'seed': seed}) }}
+{% endcall %}
+
+{% call card("全部电影评分分布", "0.1 分一档直方图", delay=3) %}
+    {{ chart(url_for('api_rating_histogram'), 'chart-md') }}
+{% endcall %}
+
+{% call card("抽样明细", "与散点图同一批数据", delay=4, flush=True) %}
+    <div class="table-wrap">
+        <table class="data">
+            <thead>
+            <tr>
+                <th class="n" style="width:52px">#</th>
+                <th>片名</th>
+                <th style="width:78px">年份</th>
+                <th style="width:200px">类型</th>
+                <th class="n" style="width:150px">豆瓣评分</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for movie in table %}
+                <tr>
+                    <td class="n">{{ loop.index }}</td>
+                    <td class="title-cell"><span class="zh">{{ movie.movie_name.split(' ', 1)[0] }}</span></td>
+                    <td class="num">{{ movie.release_year }}</td>
+                    <td>
+                        {% for genre in (movie.movie_type or '').split(',') if genre.strip() %}
+                            <span class="tag">{{ genre.strip() }}</span>
+                        {% endfor %}
+                    </td>
+                    <td class="n">{{ score_bar(movie.rating, r_lo, r_hi) }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endcall %}
+{% endblock %}

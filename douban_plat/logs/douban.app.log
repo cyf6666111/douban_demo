@@ -1,0 +1,467 @@
+2026-09-17 23:03:46 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 80, in movie_by_year
+    rows = db.get_count_by_year()
+  File "D:\douban_plat\tests\test_app.py", line 144, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:03:46 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 138, in api_movie_by_year
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+  File "D:\douban_plat\app.py", line 222, in _json
+    return jsonify(producer())
+                   ~~~~~~~~^^
+  File "D:\douban_plat\app.py", line 138, in <lambda>
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+                                                    ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\tests\test_app.py", line 144, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:04:08 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 80, in movie_by_year
+    rows = db.get_count_by_year()
+  File "D:\douban_plat\tests\test_app.py", line 168, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:04:08 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 138, in api_movie_by_year
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+  File "D:\douban_plat\app.py", line 222, in _json
+    return jsonify(producer())
+                   ~~~~~~~~^^
+  File "D:\douban_plat\app.py", line 138, in <lambda>
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+                                                    ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\tests\test_app.py", line 168, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:04:24 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 80, in movie_by_year
+    rows = db.get_count_by_year()
+  File "D:\douban_plat\tests\test_app.py", line 173, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:04:24 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 138, in api_movie_by_year
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+  File "D:\douban_plat\app.py", line 222, in _json
+    return jsonify(producer())
+                   ~~~~~~~~^^
+  File "D:\douban_plat\app.py", line 138, in <lambda>
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+                                                    ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\tests\test_app.py", line 173, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:04:29 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 80, in movie_by_year
+    rows = db.get_count_by_year()
+  File "D:\douban_plat\tests\test_app.py", line 173, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:04:29 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 138, in api_movie_by_year
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+  File "D:\douban_plat\app.py", line 222, in _json
+    return jsonify(producer())
+                   ~~~~~~~~^^
+  File "D:\douban_plat\app.py", line 138, in <lambda>
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+                                                    ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\tests\test_app.py", line 173, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:04:36 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 80, in movie_by_year
+    rows = db.get_count_by_year()
+  File "D:\douban_plat\tests\test_app.py", line 173, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:04:36 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 138, in api_movie_by_year
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+  File "D:\douban_plat\app.py", line 222, in _json
+    return jsonify(producer())
+                   ~~~~~~~~^^
+  File "D:\douban_plat\app.py", line 138, in <lambda>
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+                                                    ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\tests\test_app.py", line 173, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:05:11 | INFO    | douban.app | 启动服务：http://127.0.0.1:5000（debug=False）
+2026-09-17 23:05:43 | INFO    | douban.app | 启动服务：http://127.0.0.1:5001（debug=False）
+2026-09-17 23:05:47 | ERROR   | douban.app | 数据库异常：(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Traceback (most recent call last):
+  File "D:\douban_plat\db_utils.py", line 111, in _borrow
+    conn = self._idle.get_nowait()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\queue.py", line 231, in get_nowait
+    return self.get(block=False)
+           ~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\queue.py", line 196, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 59, in movie_list
+    overview = db.get_overview()
+  File "D:\douban_plat\db_utils.py", line 277, in get_overview
+    return self._cache.get_or_set("overview", self._build_overview)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\douban_plat\db_utils.py", line 181, in get_or_set
+    value = producer()                 # 在锁外执行耗时查询，避免阻塞其他请求
+  File "D:\douban_plat\db_utils.py", line 280, in _build_overview
+    base = self.query_one(
+           ~~~~~~~~~~~~~~^
+        f"""
+        ^^^^
+    ...<9 lines>...
+        """
+        ^^^
+    ) or {}
+    ^
+  File "D:\douban_plat\db_utils.py", line 235, in query_one
+    with self._pool.acquire() as conn:
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\douban_plat\db_utils.py", line 72, in acquire
+    conn = self._borrow()
+  File "D:\douban_plat\db_utils.py", line 116, in _borrow
+    return self._new_connection()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\db_utils.py", line 105, in _new_connection
+    return pymysql.connect(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 681, in connect
+    self._request_authentication()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 980, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\_auth.py", line 272, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+2026-09-17 23:05:47 | ERROR   | douban.app | 数据库异常：(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Traceback (most recent call last):
+  File "D:\douban_plat\db_utils.py", line 111, in _borrow
+    conn = self._idle.get_nowait()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\queue.py", line 231, in get_nowait
+    return self.get(block=False)
+           ~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\queue.py", line 196, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 138, in api_movie_by_year
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+  File "D:\douban_plat\app.py", line 222, in _json
+    return jsonify(producer())
+                   ~~~~~~~~^^
+  File "D:\douban_plat\app.py", line 138, in <lambda>
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+                                                    ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\db_utils.py", line 352, in get_count_by_year
+    return self._cache.get_or_set("by_year", build)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\douban_plat\db_utils.py", line 181, in get_or_set
+    value = producer()                 # 在锁外执行耗时查询，避免阻塞其他请求
+  File "D:\douban_plat\db_utils.py", line 341, in build
+    rows = self.query_all(
+        f"""
+    ...<5 lines>...
+        """
+    )
+  File "D:\douban_plat\db_utils.py", line 228, in query_all
+    with self._pool.acquire() as conn:
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\douban_plat\db_utils.py", line 72, in acquire
+    conn = self._borrow()
+  File "D:\douban_plat\db_utils.py", line 116, in _borrow
+    return self._new_connection()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\db_utils.py", line 105, in _new_connection
+    return pymysql.connect(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 681, in connect
+    self._request_authentication()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 980, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\_auth.py", line 272, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+2026-09-17 23:05:52 | INFO    | douban.app | 启动服务：http://127.0.0.1:5002（debug=False）
+2026-09-17 23:05:57 | ERROR   | douban.app | 数据库异常：(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Traceback (most recent call last):
+  File "D:\douban_plat\db_utils.py", line 111, in _borrow
+    conn = self._idle.get_nowait()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\queue.py", line 231, in get_nowait
+    return self.get(block=False)
+           ~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\queue.py", line 196, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 59, in movie_list
+    overview = db.get_overview()
+  File "D:\douban_plat\db_utils.py", line 277, in get_overview
+    return self._cache.get_or_set("overview", self._build_overview)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\douban_plat\db_utils.py", line 181, in get_or_set
+    value = producer()                 # 在锁外执行耗时查询，避免阻塞其他请求
+  File "D:\douban_plat\db_utils.py", line 280, in _build_overview
+    base = self.query_one(
+           ~~~~~~~~~~~~~~^
+        f"""
+        ^^^^
+    ...<9 lines>...
+        """
+        ^^^
+    ) or {}
+    ^
+  File "D:\douban_plat\db_utils.py", line 235, in query_one
+    with self._pool.acquire() as conn:
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\douban_plat\db_utils.py", line 72, in acquire
+    conn = self._borrow()
+  File "D:\douban_plat\db_utils.py", line 116, in _borrow
+    return self._new_connection()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\db_utils.py", line 105, in _new_connection
+    return pymysql.connect(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 681, in connect
+    self._request_authentication()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 980, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\_auth.py", line 272, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+2026-09-17 23:05:57 | ERROR   | douban.app | 数据库异常：(1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+Traceback (most recent call last):
+  File "D:\douban_plat\db_utils.py", line 111, in _borrow
+    conn = self._idle.get_nowait()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\queue.py", line 231, in get_nowait
+    return self.get(block=False)
+           ~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\queue.py", line 196, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 138, in api_movie_by_year
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+  File "D:\douban_plat\app.py", line 222, in _json
+    return jsonify(producer())
+                   ~~~~~~~~^^
+  File "D:\douban_plat\app.py", line 138, in <lambda>
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+                                                    ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\db_utils.py", line 352, in get_count_by_year
+    return self._cache.get_or_set("by_year", build)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\douban_plat\db_utils.py", line 181, in get_or_set
+    value = producer()                 # 在锁外执行耗时查询，避免阻塞其他请求
+  File "D:\douban_plat\db_utils.py", line 341, in build
+    rows = self.query_all(
+        f"""
+    ...<5 lines>...
+        """
+    )
+  File "D:\douban_plat\db_utils.py", line 228, in query_all
+    with self._pool.acquire() as conn:
+         ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\douban_plat\db_utils.py", line 72, in acquire
+    conn = self._borrow()
+  File "D:\douban_plat\db_utils.py", line 116, in _borrow
+    return self._new_connection()
+           ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\db_utils.py", line 105, in _new_connection
+    return pymysql.connect(**kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 365, in __init__
+    self.connect()
+    ~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 681, in connect
+    self._request_authentication()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 980, in _request_authentication
+    auth_packet = _auth.caching_sha2_password_auth(self, auth_packet)
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\_auth.py", line 272, in caching_sha2_password_auth
+    pkt = _roundtrip(conn, data)
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\_auth.py", line 121, in _roundtrip
+    pkt = conn._read_packet()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\connections.py", line 782, in _read_packet
+    packet.raise_for_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\pymysql\err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+2026-09-17 23:07:28 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 80, in movie_by_year
+    rows = db.get_count_by_year()
+  File "D:\douban_plat\tests\test_app.py", line 173, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")
+2026-09-17 23:07:28 | ERROR   | douban.app | 数据库异常：(2003, "Can't connect to MySQL server")
+Traceback (most recent call last):
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\MR\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\douban_plat\app.py", line 138, in api_movie_by_year
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+  File "D:\douban_plat\app.py", line 222, in _json
+    return jsonify(producer())
+                   ~~~~~~~~^^
+  File "D:\douban_plat\app.py", line 138, in <lambda>
+    return _json(lambda: charts.movie_by_year_chart(db.get_count_by_year()))
+                                                    ~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\douban_plat\tests\test_app.py", line 173, in get_count_by_year
+    raise pymysql.err.OperationalError(2003, "Can't connect to MySQL server")
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server")

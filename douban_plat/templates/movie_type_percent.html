@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% from "_macros.html" import card, chart %}
+
+{% block title %}电影类型占比 · 豆瓣电影数据可视化{% endblock %}
+{% block eyebrow %}数据图表 / 类型构成{% endblock %}
+{% block heading %}电影类型占比{% endblock %}
+{% block description %}
+    统计 Top250 中每个类型标签的出现次数。共出现 {{ type_count }} 个不同标签、
+    累计 {{ tag_total }} 次标签命中；环形图取前 10 名，其余长尾合并为「其他」，
+    避免小扇区挤在一起看不清。
+{% endblock %}
+
+{% block note %}
+    <p class="page-note">
+        <b>口径说明：</b>一部电影通常有多个类型标签（如《霸王别姬》＝剧情＋爱情＋同性），
+        所以各扇区百分比的分母是 <b>{{ tag_total }}</b>（类型标签总命中次数），
+        而不是电影数 250。直接读成「剧情片占 74%」是错的。
+    </p>
+{% endblock %}
+
+{% block content %}
+<div class="split">
+    {% call card("类型构成环形图", "Top10 + 其他", delay=2) %}
+        {{ chart(url_for('api_movie_type'), 'chart-lg') }}
+    {% endcall %}
+
+    {% call card("类型次数明细", type_count ~ " 个类型标签", delay=3, flush=True) %}
+        <div class="table-wrap" style="max-height:560px">
+            <table class="data">
+                <thead>
+                <tr>
+                    <th class="n" style="width:52px">#</th>
+                    <th>类型</th>
+                    <th class="n">出现次数</th>
+                    <th class="n">占标签总数</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% set max_cnt = table[0][1] if table else 1 %}
+                {% for name, cnt in table %}
+                    <tr>
+                        <td class="n"><span class="rank{% if loop.index <= 3 %} top{% endif %}">{{ loop.index }}</span></td>
+                        <td>
+                            <span class="tag">{{ name }}</span>
+                            <span class="score-bar" style="margin-left:8px">
+                                <span class="track" style="width:64px">
+                                    <i class="fill" style="width: {{ '%.0f' % (cnt / max_cnt * 100) }}%"></i>
+                                </span>
+                            </span>
+                        </td>
+                        <td class="n">{{ cnt }}</td>
+                        <td class="n">{{ '%.1f' % (cnt / tag_total * 100) }}%</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endcall %}
+</div>
+{% endblock %}

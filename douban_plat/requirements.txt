@@ -1,0 +1,28 @@
+# 运行环境与依赖
+# 安装：python -m pip install -r requirements.txt
+#
+# 说明：本文件按"直接依赖"列出，不锁定具体小版本号 —— 课程/答辩环境用较新版本即可。
+# 若要完全复现，建议追加 `pip freeze > requirements.lock.txt` 固定版本。
+
+# Web 框架
+Flask>=3.0
+
+# 数据库驱动（纯 Python 实现，免装 C 扩展，换机部署方便）
+PyMySQL>=1.1
+
+# 爬虫
+requests>=2.31
+beautifulsoup4>=4.12
+
+# 可视化（生成 ECharts 配置项 JSON，由前端本地 echarts.min.js 渲染）
+pyecharts>=2.0
+
+# 文本分析与词云
+jieba>=0.42
+wordcloud>=1.9
+numpy>=1.26
+
+# 说明：
+# - 原项目额外依赖 jQuery / Bootstrap / ECharts CDN，现已全部本地化或移除，不再需要 Node 环境；
+# - 单元测试使用 Python 标准库 unittest，无需安装 pytest：
+#     python -m unittest discover -s tests -t . -v

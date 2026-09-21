@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}电影词云 · 豆瓣电影数据可视化{% endblock %}
+{% block eyebrow %}文本分析 / 词频{% endblock %}
+{% block heading %}电影词云{% endblock %}
+{% block description %}
+    把 {{ movie_sum }} 部电影的片名、导演、类型分别做词频统计并渲染成词云。
+    图片由 Python 的 wordcloud 库离线生成，配合右侧词频榜，图与表互相印证。
+{% endblock %}
+
+{% block note %}
+    {% if not font_ok %}
+        <p class="page-note" style="border-left-color:var(--brick);background:rgba(154,63,54,.08);color:#7A2E27">
+            <b>字体缺失：</b>未找到中文字体 {{ config_font }}，词云将无法生成。
+            请把任意中文字体（如 simhei.ttf）放到 <code>static/fonts/main.ttf</code>。
+        </p>
+    {% else %}
+        <p class="page-note">
+            <b>处理口径：</b>片名先按空格切掉外文原名，去掉间隔号「·」后用 jieba 分词，
+            再过滤单字与停用词；类型本身是逗号分隔的结构化标签，直接按分隔符切分即可，
+            <b>不需要分词</b>（原实现对类型跑 jieba 属于过度处理）。
+            词频做平方根压缩后再上色，避免头号词占满整张图。
+        </p>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+{% set preview_key = {'movie_names.png': '片名关键词',
+                      'director_names.png': '导演',
+                      'types.png': '电影类型'} %}
+
+<div class="cloud-grid">
+    {% for filename, meta in clouds.items() %}
+        <figure class="cloud-card rise rise-{{ loop.index + 1 }}">
+            <figcaption>
+                <p class="c-title">{{ meta.title }}</p>
+                <p class="c-desc">{{ meta.desc }}</p>
+            </figcaption>
+
+            {% if status.get(filename) %}
+                <img src="{{ url_for('static', filename='images/' ~ filename) }}"
+                     alt="{{ meta.title }}词云图，具体数值见下方词频榜" loading="lazy">
+            {% else %}
+                <p class="cloud-missing">
+                    词云生成失败（有效词汇不足或字体缺失）<br>
+                    详细原因见 logs/douban.wordcloud.log
+                </p>
+            {% endif %}
+
+            {% set freq = previews.get(preview_key.get(filename), []) %}
+            {% if freq %}
+                <div class="freq-list">
+                    <h4>词频 Top {{ freq | length }}</h4>
+                    {% set top = freq[0][1] %}
+                    {% for word, cnt in freq %}
+                        <div class="freq-row">
+                            <span class="w">{{ word }}</span>
+                            <span class="bar"><i style="width: {{ '%.0f' % (cnt / top * 100) }}%"></i></span>
+                            <span class="v">{{ cnt }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </figure>
+    {% endfor %}
+</div>
+{% endblock %}

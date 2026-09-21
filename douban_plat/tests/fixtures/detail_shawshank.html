@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+  测试夹具：模拟豆瓣电影详情页的关键结构（按真实页面的 DOM 结构书写）。
+  说明：真实详情页现在会对匿名请求返回反爬挑战页（见 challenge_page.html），
+  因此这里用结构化夹具做解析器的回归测试，避免测试依赖外网与登录态。
+-->
+<html lang="zh-CN">
+<head><meta charset="utf-8"><title>肖申克的救赎 (豆瓣)</title></head>
+<body>
+<div id="content">
+    <h1>
+        <span property="v:itemreviewed">肖申克的救赎 The Shawshank Redemption</span>
+        <span class="year">(1994)</span>
+    </h1>
+
+    <div class="rating_wrap clearbox" id="interest_sectl">
+        <div class="rating_self clearfix" typeof="v:Rating">
+            <strong class="ll rating_num" property="v:average">9.7</strong>
+            <span property="v:best" content="10.0"></span>
+            <div class="rating_right">
+                <div class="ll bigstar45"></div>
+                <div class="rating_sum">
+                    <a class="rating_people" href="collections"><span property="v:votes">3249655</span>人评价</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="info">
+        <span>
+            <span class="attrs">
+                <a href="https://movie.douban.com/celebrity/1054521/" rel="v:directedBy">弗兰克·德拉邦特</a>
+            </span>
+            <span class="pl">编剧</span>
+            <span class="attrs">
+                <a href="https://movie.douban.com/celebrity/1054521/">弗兰克·德拉邦特</a> /
+                <a href="https://movie.douban.com/celebrity/1048030/">斯蒂芬·金</a>
+            </span>
+            <br>
+        </span>
+        <span class="actor">
+            <span class="pl">主演:</span>
+            <span class="attrs"><a href="https://movie.douban.com/celebrity/1054521/">蒂姆·罗宾斯</a></span> /
+            <span class="attrs"><a href="https://movie.douban.com/celebrity/1054524/">摩根·弗里曼</a></span>
+            <br>
+        </span>
+        <span class="pl">类型:</span>
+        <span property="v:genre">剧情</span> /
+        <span property="v:genre">犯罪</span>
+        <br>
+        <span class="pl">制片国家/地区:</span> 美国 <br>
+        <span class="pl">语言:</span> 英语 <br>
+        <span class="pl">上映日期:</span>
+        <span property="v:initialReleaseDate" content="1994-09-10(多伦多电影节)">1994-09-10(多伦多电影节)</span> /
+        <span property="v:initialReleaseDate" content="1994-10-14(美国)">1994-10-14(美国)</span>
+        <br>
+        <span class="pl">片长:</span>
+        <span property="v:runtime" content="142">142分钟</span>
+        <br>
+        <span class="pl">又名:</span> 月黑高飞(港) / 刺激1995(台) <br>
+    </div>
+
+    <span class="all hidden">
+        <span class="pl">IMDb:</span> tt0111161
+    </span>
+</div>
+</body>
+</html>
